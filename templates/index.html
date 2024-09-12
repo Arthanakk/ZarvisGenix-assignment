@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1 class="signin"><strong>Sign In</strong></h1>
+<div class="signup-login">
+    <form action="login" method="post" >
+    {% csrf_token %}
+    <table >
+        <tr>
+            <td> <input type="email" name="email" placeholder="Email" class="form-field" required><br></td>
+        </tr>
+
+        <tr>
+            <td><input type="password" name="password" placeholder="Password" class="form-field" required><br> </td>
+        </tr>
+ </table>
+</form>
+    <div class="forget-remember">
+        <div class="remember">
+            <input required type="checkbox">
+            <label>Remember me</label>
+        </div>
+        <div class="forget">
+            <a href="#">Forget Password</a>
+        </div>
+    </div>
+    <button class="login-button">Login</button>
+    <div class="not-register">
+        <p>Don’t have account?</p>
+        <p><a href="/register"><strong>Register</strong></a></p>
+    </div>
+</div>
+
+
+{% endblock content %}
